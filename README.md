@@ -22,6 +22,7 @@ Para iniciar el proyecto, -cd three-react-app y luego -npm run dev
 ## Cómo decidimos representar los elementos (colores / figuras)
 
 -los Pokémones en la lista aparecen en tarjetas que aprovechan un elemento 3D (RotatingBox) para dar sensación de profundidad y movimiento.
+Se realizaron algunos modelos 3D en blender para facilitar la identificacion de la figura.
 - Colores por tipo:
 	- Fuego: rojo
 	- Agua: azule
