@@ -1,16 +1,37 @@
-# React + Vite
+## Integrantes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Wesley David Saavedra - 100401
+- Danna Andrea Rodriguez - 101050
+- Santiago Vaca Perez - 97537S
+- Juliana Ramirez Barona - 85234
 
-Currently, two official plugins are available:
+## Descripción corta del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta aplicación es una Pokedex creada con React y Three.js. Permite explorar Pokémones mostrando tarjetas y elementos 3D interactivos. La interfaz combina componentes React tradicionales como listas y tarjetas con una escena 3D para enriquecer la experiencia visual.
 
-## React Compiler
+Para iniciar el proyecto, -cd three-react-app y luego -npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Breve explicacion de cómo conectamos la API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-API utilizada: PokeAPI (https://pokeapi.co/).
+-Implementación: la app solicita la lista de Pokémon y sus detalles desde el cliente usando fetch/async-await dentro de efectos de React (useEffect). Por ejemplo, en el componente que lista Pokémon (Pokedex.jsx) se hace una petición al endpoint /api/v2/pokemon?limit=... para obtener las entradas basicas y después se solicitan los detalles necesarios para cada Pokémon.
+-Los resultados se guardan en el estado del componente (useState) y se muestran en componentes como PokemonCard.jsx 
+
+
+## Cómo decidimos representar los elementos (colores / figuras)
+
+-los Pokémones en la lista aparecen en tarjetas que aprovechan un elemento 3D (RotatingBox) para dar sensación de profundidad y movimiento.
+- Colores por tipo:
+	- Fuego: rojo
+	- Agua: azule
+	- Planta: verde
+	- Eléctrico: amarillos
+	- Hielo: celestes
+	- Veneno: morados
+	- Fantasma/Siniestro: tonos oscuros
+	- Normal/Lucha/Acero/etc.: variaciones basadas en la paleta visual para mantener contraste y accesibilidad
+	
+
+- Tipografía y contraste: se eligieron colores de texto y fondos con suficiente contraste para mantener legibilidad sobre las tarjetas 3D.
+- Interacciones: las tarjetas y objetos 3D responden a click con animaciones suaves para mejorar la sensación táctil.
