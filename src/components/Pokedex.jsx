@@ -12,7 +12,7 @@ const Pokedex = ({ pokemons = [], loading, error, selected, onSelect, onSearch }
   const isSearching = loading;
   const isNotFound = !!error;
 
-  // 🔁 Buscar sugerencias
+
   useEffect(() => {
     if (input.trim().length < 2) {
       setApiSuggestions([]);
@@ -35,7 +35,7 @@ const Pokedex = ({ pokemons = [], loading, error, selected, onSelect, onSearch }
     fetchSuggestions();
   }, [input]);
 
-  // 🔁 Cargar cadena evolutiva del Pokémon seleccionado
+
   useEffect(() => {
     if (!selected?.species?.url) return;
 
